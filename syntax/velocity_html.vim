@@ -20,6 +20,17 @@ elseif exists("b:current_syntax")
   finish
 endif
 
+if !exists("main_syntax")
+  let main_syntax = 'html'
+endif
+
+if version < 600
+  so <sfile>:p:h/html.vim
+else
+  runtime! syntax/html.vim
+  unlet b:current_syntax
+endif
+
 runtime! syntax/pure_velocity.vim
 
-let b:current_syntax = "velocity"
+let b:current_syntax = "velocity_html"
