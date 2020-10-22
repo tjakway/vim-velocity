@@ -2,7 +2,7 @@ syn keyword velocityTodo FIXME TODO contained
 syn region velocitySpec start="@" end=" " oneline contained
 syn region velocityComment start="#\*" end="\*#" contains=velocityTodo,velocitySpec
 syn match velocityComment /##.*/ contains=velocityTodo,velocitySpec
-syn region velocityString start='"' end='"' oneline display
+syn region velocityString start='"' end='"' display
 syn match velocityNumber "[-+]\=\d\+\(\.\d*\)\=" display
 syn region velocityList start='\[' end='\]' oneline contained contains=velocityString,velocityNumber
 syn match velocityMath /=\|-\|+\|\/\|\*\|%/ contained
